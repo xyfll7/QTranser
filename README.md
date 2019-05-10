@@ -52,4 +52,4 @@ Ctrl+C时朗读英文发音
 
 加微信交流反馈群，这样能够得到更及时的反馈。
 
-<img src='https://raw.githubusercontent.com/xyfll7/QTranser/master/screenshot/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190510155059.jpg' height='300px'>
+<img src='https://raw.githubusercontent.com/xyfll7/QTranser/master/screenshot/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190510155059.jpg' height='400px'>
