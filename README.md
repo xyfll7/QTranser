@@ -3,6 +3,11 @@
 
 下载安装包： [QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 
 
+这款软件的特别之处在于：它监视剪切板，并将翻译结果展示在windows任务栏。
+
+特别是对学习编程朋友有较大的帮助，他们可以随手Ctrl+c 从代码编辑器，termnail中翻译不认识的单词，
+不像其它翻译工具，这款软件的翻译作用域等于剪切板的作用域。
+
 ## 厉害的Ctrl+C 
 您只需要按下Ctrl+C将文字复制进剪切板：
 
