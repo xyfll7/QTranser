@@ -17,13 +17,9 @@ C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\RegAsm.exe
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\installer.bat
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\gacutil.exe.config
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\regasm.exe.config
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\installerEXE.bat
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\Uninstall.bat
 C:\Users\Administrator\source\repos\QTranser\QTests\obj\Debug\QTests.exe.config
 C:\Users\Administrator\source\repos\QTranser\QTests\obj\Debug\QTests.Properties.Resources.resources
 C:\Users\Administrator\source\repos\QTranser\QTests\obj\Debug\QTestsConsole.csproj.GenerateResource.cache
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\UninstallEXE.bat
-C:\Users\Administrator\source\repos\QTranser\QTestsConsole\obj\Debug\QTests.exe.config
 C:\Users\Administrator\source\repos\QTranser\QTestsConsole\obj\Debug\QTests.Properties.Resources.resources
 C:\Users\Administrator\source\repos\QTranser\QTestsConsole\obj\Debug\QTestsConsole.csproj.GenerateResource.cache
 C:\Users\Administrator\source\repos\QTranser\QTestsConsole\obj\Debug\QTestsConsole.csproj.CoreCompileInputs.cache
@@ -34,3 +30,4 @@ C:\Users\Administrator\source\repos\QTranser\QTestsConsole\obj\Debug\QTestsConso
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\restart.bat
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\log\log.json
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\log\log.txt
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\unRegiste.bat

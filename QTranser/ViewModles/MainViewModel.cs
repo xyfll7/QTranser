@@ -5,8 +5,68 @@ using System.Windows.Media;
 
 namespace QTranser.ViewModles
 {
-    public class MainViewModel : ViewModel
+    public class MainViewModel: ViewModel
     {
+        private int _todayTanseTime = 0;
+        public int TodayTanseTime
+        {
+            get => _todayTanseTime;
+            set
+            {
+                if (value == _todayTanseTime) return;
+                _todayTanseTime = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private int _historyTanseTime = 0;
+        public int WeekTanseTime
+        {
+            get => _historyTanseTime;
+            set
+            {
+                if (value == _historyTanseTime) return;
+                _historyTanseTime = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private string _userName = "——— login ———";
+        public string UserName
+        {
+            get => _userName;
+            set
+            {
+                if (value == _userName) return;
+                _userName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _visibility0 = Visibility.Collapsed;
+        public Visibility Visibility0
+        {
+            get => _visibility0;
+            set
+            {
+                if (value == _visibility0) return;
+                _visibility0 = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Visibility _visibility1 = Visibility.Collapsed;
+        public Visibility Visibility1
+        {
+            get => _visibility1;
+            set
+            {
+                if (value == _visibility1) return;
+                _visibility1 = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _strQ = "QTranser";
         public string StrQ
         {
@@ -56,6 +116,7 @@ namespace QTranser.ViewModles
                 OnPropertyChanged();
             }
         }
+
         private string _hotKeyW;
         public string HotKeyW
         {
@@ -67,6 +128,7 @@ namespace QTranser.ViewModles
                 OnPropertyChanged();
             }
         }
+
         private string _hotKeyB;
         public string HotKeyB
         {
@@ -78,6 +140,7 @@ namespace QTranser.ViewModles
                 OnPropertyChanged();
             }
         }
+
         private string _hotKeyG;
         public string HotKeyG
         {
@@ -101,5 +164,7 @@ namespace QTranser.ViewModles
                 OnPropertyChanged();
             }
         }
+
+
     }
 }

@@ -2,7 +2,6 @@
 using IWshRuntimeLibrary;
 using QTranser.QTranseLib;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,53 +16,53 @@ namespace QTranser
     /// </summary>
     public partial class QShower : Window
     {
-
+        private GithubLogin githubLogin = new GithubLogin();
+       
         public QShower()
         {
             InitializeComponent();
             DataContext = QTranse.Mvvm;
             this.Height = SystemParameters.WorkArea.Height / 2;
+            GithubLogin.InitGitHubUserName();
+            TanseTimes.InitTranseTime();
         }
 
         public void ShowOrHide(double actualHeight, double actualWidth, double pointToScreen)
         {
             try
             {
-
-  
-            if (this.IsVisible)
-            {
-                this.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                if (Deskband.Edger == Edge.Top)
+                if (this.IsVisible)
                 {
-                    this.Left = pointToScreen + actualWidth - this.Width;
-                    this.Top = actualHeight;
+                    this.Visibility = Visibility.Hidden;
                 }
-                if (Deskband.Edger == Edge.Bottom)
+                else
                 {
-                        
-                    this.Left = pointToScreen + actualWidth - this.Width;
-                    this.Top = SystemParameters.WorkArea.Height - this.Height;
+                    if (Deskband.Edger == Edge.Top)
+                    {
+                        this.Left = pointToScreen + actualWidth - this.Width;
+                        this.Top = actualHeight;
+                    }
+                    if (Deskband.Edger == Edge.Bottom)
+                    {
+                        this.Left = pointToScreen + actualWidth - this.Width;
+                        this.Top = SystemParameters.WorkArea.Height - this.Height;
+                    }
+                    if (Deskband.Edger == Edge.Left)
+                    {
+                        this.Left = actualWidth;
+                        this.Top = SystemParameters.WorkArea.Height - this.Height;
+                    }
+                    if (Deskband.Edger == Edge.Right)
+                    {
+                        this.Left = SystemParameters.WorkArea.Width - this.Width;
+                        this.Top = SystemParameters.WorkArea.Height - this.Height;
+                    }
+                    this.Visibility = Visibility.Visible;
+                    this.Topmost = true;
+                    this.Activate();
+                    this.StrIBox.Focus();
+                    this.StrIBox.SelectionStart = this.StrIBox.Text.Length;
                 }
-                if (Deskband.Edger == Edge.Left)
-                {
-                    this.Left = actualWidth;
-                    this.Top = SystemParameters.WorkArea.Height - this.Height;
-                }
-                if (Deskband.Edger == Edge.Right)
-                {
-                    this.Left = SystemParameters.WorkArea.Width - this.Width;
-                    this.Top = SystemParameters.WorkArea.Height - this.Height;
-                }
-                this.Visibility = Visibility.Visible;
-                this.Topmost = true;
-                this.Activate();
-                this.StrIBox.Focus();
-                this.StrIBox.SelectionStart = this.StrIBox.Text.Length;
-            }
 
             }
             catch(Exception err)
@@ -139,11 +138,6 @@ namespace QTranser
             QTranse.Mvvm.HistoryWord.RemoveAt(HistoryList.SelectedIndex);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(Idkey.Key + ":" + Idkey.Id);
-        }
-
         private void StackPanel_Drop(object sender, DragEventArgs e)
         {
             string shortcutPath =  ((DataObject)e.Data).GetFileDropList()[0];
@@ -152,6 +146,11 @@ namespace QTranser
             MessageBox.Show(shortcut.FullName);
             MessageBox.Show(shortcut.TargetPath);
             //Properties.Settings.Default.设置;
+        }
+
+        private void Pather_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            githubLogin.Button_Click();
         }
     }
 }

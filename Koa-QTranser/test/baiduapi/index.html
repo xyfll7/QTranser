@@ -1,0 +1,53 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app0">
+    <input type="text" name="lname" v-model:value="query" />
+    <button @click="getResult"></button>
+</div>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./md5.js"></script>
+<script type="text/javascript">
+var appid = '20190430000292991';
+var key = 'BKJw70hwrHVjthZ8cYvP';
+var salt = (new Date).getTime();
+
+// 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
+
+
+let app = new Vue({
+    el:'#app0',
+    data: {
+        query : 'apple'
+    },
+    methods: {
+        getResult() {
+            var from = 'en';
+            var to = 'zh';
+            var str1 = appid + this.query + salt +key;
+            var sign = MD5(str1);
+            $.ajax({
+                url: 'http://api.fanyi.baidu.com/api/trans/vip/translate',
+                type: 'get',
+                dataType: 'jsonp',
+                data: {
+                    q: this.query,
+                    appid: appid,
+                    salt: salt,
+                    from: from,
+                    to: to,
+                    sign: sign
+                },
+                success: function (data) {
+                    console.log(data)
+                }
+            });
+        }
+    }
+})
+</script>
+</body>

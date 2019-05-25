@@ -1,0 +1,19 @@
+@host = http://47.95.197.94:2399
+
+### request.search
+POST {{host}}/api/transer
+content-type: application/json
+
+{
+    "mac": "1.1.1.1",
+    "word": "英"
+}
+
+### update
+GET {{host}}/api/transer/update
+
+###
+GET {{host}}/aaa.jpg
+
+###
+GET https://github.com/login/oauth/authorize?client_id=2bad7ade7264aaafee4b&scope=user:email HTTP/1.1

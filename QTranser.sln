@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QTestsWindow", "QTestsWindo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QTestsConsole", "QTestsConsole\QTestsConsole.csproj", "{095654B5-90FB-4F85-ACA6-C8C9B96E5281}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QTranser_Installer", "QTranser_Installer\QTranser_Installer.vdproj", "{87F6C38C-0511-4443-96D0-E01B4063BB5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QTranserOneKeyInstallers", "QTranserOneKeyInstallers\QTranserOneKeyInstallers.csproj", "{94543B06-A0EA-4E25-88C6-2B549E809885}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QTranser_Installer", "QTranser_Installer\QTranser_Installer.vdproj", "{E1262305-1A1D-40EC-8B81-7DB59A6A2A8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,8 +31,12 @@ Global
 		{095654B5-90FB-4F85-ACA6-C8C9B96E5281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{095654B5-90FB-4F85-ACA6-C8C9B96E5281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{095654B5-90FB-4F85-ACA6-C8C9B96E5281}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87F6C38C-0511-4443-96D0-E01B4063BB5E}.Debug|Any CPU.ActiveCfg = Debug
-		{87F6C38C-0511-4443-96D0-E01B4063BB5E}.Release|Any CPU.ActiveCfg = Release
+		{94543B06-A0EA-4E25-88C6-2B549E809885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94543B06-A0EA-4E25-88C6-2B549E809885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94543B06-A0EA-4E25-88C6-2B549E809885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94543B06-A0EA-4E25-88C6-2B549E809885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1262305-1A1D-40EC-8B81-7DB59A6A2A8F}.Debug|Any CPU.ActiveCfg = Debug
+		{E1262305-1A1D-40EC-8B81-7DB59A6A2A8F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

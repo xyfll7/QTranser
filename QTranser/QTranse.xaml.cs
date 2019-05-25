@@ -1,6 +1,5 @@
 ﻿//#define LOG
-//#define DOWNLOAD
-//#define MongoDB
+//#define gitDOWNLOAD
 
 using Newtonsoft.Json.Linq;
 using QTranser.ViewModles;
@@ -17,15 +16,15 @@ using WindowsInput.Native;
 using System.Diagnostics;
 using System.Threading;
 using System.Text.RegularExpressions;
-using QTranser.QTranseLib.MongoDB;
 using System.Runtime.InteropServices;
+using System.Windows.Media;
 
 namespace QTranser
 {
     /// <summary>
     /// UserControl1.xaml 的交互逻辑
     /// </summary>
-    public partial class QTranse : UserControl
+    public partial class QTranse: UserControl
     {
         public static HotKeyManager HotKeyManage;
         public static MainViewModel Mvvm { get; private set; } = new MainViewModel();
@@ -34,6 +33,7 @@ namespace QTranser
         private ClipboardMonitor _clipboardMonitor;
         private InputSimulator Sim { get; set; } = new InputSimulator();
         private ForegroundWindow ForegroundW { get; set; } = new ForegroundWindow();
+        private Update Update { get; } = new Update();
 
         // 全局未捕获异常
         private GlobalUnhandledException GlobalExcep { get; set; } = new GlobalUnhandledException();
@@ -55,20 +55,35 @@ namespace QTranser
             RegisterHotKey();
                 
             var SysColor = new SysColorChanger(this);
-            SysColor.SysColorChange += () => Mvvm.LogoColor = SystemParameters.WindowGlassBrush;
-
-            // 必须在此处初始化，否则关闭QTranser后再次打开，就不会被初始化
-            // 那么_shower的各种方法也就没办法被调用，要是调用了就会引发异常，空值当然会引发异常了。
-            //Shower = new QShower();
-            //Shower.ShowOrHide(ActualHeight, ActualWidth, PointToScreen(new Point()).X);
+            SysColor.SysColorChange += OnThemeColorChange;
+        }
+        // 主题色
+        private void OnThemeColorChange()
+        {
+            ThemeColor _;
+            string color = SystemParameters.WindowGlassBrush.ToString().Remove(0, 1);
+            if (Enum.TryParse<ThemeColor>(color, out _))
+            {
+                Mvvm.LogoColor = SystemParameters.WindowGlassBrush;
+            }
+            else
+            {
+                BrushConverter brushConverter = new BrushConverter();
+                Mvvm.LogoColor = (Brush)brushConverter.ConvertFromString("#FF436059");
+            }
         }
         
         // 剪切板事件处理
         private async void OnClipboardUpdate(object sender, EventArgs e)
         {
+
             string str = ClipboardGetText();
-           
+
             if (str == "") return;
+
+            // 翻译次数
+            TanseTimes.AddTodayTranseTime();
+
             str = AddSpacesBeforeCapitalLetters(str);
 
             Mvvm.StrQ = "...";
@@ -83,13 +98,14 @@ namespace QTranser
             }
 
             if (Mvvm.HistoryWord.Count > 8) Mvvm.HistoryWord.RemoveAt(8);
-#if MongoDB
-            await Task.Run(() => new Credentials(str));
-#endif
+
+
+            // 软件升级
+            Update.GetNewVersion(Mvvm);
         }
         private string ClipboardGetText()
         {
-            var str = "";
+            string str = "";
             if (Clipboard.ContainsText())
             {
                 try { str = Clipboard.GetText(); }
@@ -101,7 +117,7 @@ namespace QTranser
                     catch (COMException) { str = "剪切板被占用"; }
                 }
             }
-#if DOWNLOAD
+#if gitDOWNLOAD
             str = Download(str);
 #endif
             return str.Trim().Replace("  ", "");
@@ -112,17 +128,70 @@ namespace QTranser
             str = Regex.Replace(str, "([A-Z])([A-Z][a-z])", "$1 $2");
             str = Regex.Replace(str, "([a-z])([A-Z][a-z])", "$1 $2");
             str = Regex.Replace(str, "([a-z])([A-Z][a-z])", "$1 $2");
-            return str;
+            return str.ToLower();  // 因为金山词霸翻译接口不认识大写。
         }
-        private int i { get; set; } = 0;
+        private int I { get; set; } = 0;
         private string TranslationResultDisplay(string str)
         {
-            var youdao = new Youdao();
-            string transResultJson = youdao.translator(str);
+            var translator = new Translator();
+
+            string transResultJson = translator.GetJson(str);
             dynamic transResult = JToken.Parse(transResultJson) as dynamic;
 
-            var errotCode = transResult?.errorCode;
+            string detailsStrO = "";
+            try
+            {
+                if(transResult.en != "" && transResult.am != "" && transResult.en != null)
+                {
+                    detailsStrO += "英:[" + transResult?.en + "]" + "  美:[" + transResult?.am + "]" + Environment.NewLine + Environment.NewLine;
+                }
+                if(transResult.api == "jinshan-en")
+                {
+                    foreach (var strr in transResult.dst)
+                    {
+                        detailsStrO += strr.part + Environment.NewLine;
+                        foreach (var strrr in strr.means)
+                        {
+                            detailsStrO += strrr + "  ";
+                        }
+                        detailsStrO += Environment.NewLine;
+                    }
+                }
+                if (transResult.api == "jinshan-cn")
+                {
+                    foreach (var strr in transResult.dst)
+                    {
+                        detailsStrO += strr + Environment.NewLine;
+                    }
+                }
+           
+                Mvvm.StrI = str;
+                string baiduStr = "";
 
+                foreach(var strrr in transResult.baidu)
+                {
+                    baiduStr += strrr.dst + "\n";
+                }
+                Mvvm.StrQ = baiduStr.Replace("\n", "");
+                if(detailsStrO != "")
+                {
+                    Mvvm.StrO = detailsStrO.Substring(0, detailsStrO.Length - 2);
+                }
+                else
+                {
+                    Mvvm.StrO = baiduStr;
+                }
+
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+
+            return detailsStrO;
+
+#if YOUDAOAPI
+            var errotCode = transResult?.errorCode;
             if (errotCode == "108" && i < 5)
             {
                 TranslationResultDisplay(str); i++;
@@ -130,7 +199,7 @@ namespace QTranser
             }
             if (errotCode == "401")
             {
-                Idkey.idkdy();
+                QTranseLib.Idkey.idkdy();
             }
             i = 0;
             Mvvm.StrI = str;
@@ -174,6 +243,7 @@ namespace QTranser
             }
             catch (Exception) { }
             return "";
+#endif
         }
 
         //下载github文件
@@ -222,7 +292,6 @@ namespace QTranser
                 Mvvm.HotKeyQ = HotKeyManage.ToString();
                 HotKeyEditor.HotKey.hotKeyModQ = ModifierKeys.Control;
                 HotKeyEditor.HotKey.hotKeyQ = Key.Q;
-
             }
             catch
             {
@@ -230,10 +299,10 @@ namespace QTranser
             }
             try
             {
-                var hotKeyW = HotKeyManage.Register(Key.W, ModifierKeys.Control);
+                var hotKeyW = HotKeyManage.Register(Key.R, ModifierKeys.Control);
                 Mvvm.HotKeyW = HotKeyManage.ToString();
                 HotKeyEditor.HotKey.hotKeyModW = ModifierKeys.Control;
-                HotKeyEditor.HotKey.hotKeyW = Key.W;
+                HotKeyEditor.HotKey.hotKeyW = Key.R;
             }
             catch
             {
@@ -279,7 +348,6 @@ namespace QTranser
             }
             if (e.HotKey.Key == HotKeyEditor.HotKey.hotKeyB)
             { 
-                
                 Sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
                 Thread.Sleep(20);
                 string str = ClipboardGetText(); 
@@ -318,6 +386,21 @@ namespace QTranser
             if (Shower == null)
             { Shower = new QShower(); }
             Shower.ShowOrHide(ActualHeight, ActualWidth, PointToScreen(new Point()).X);
+        }
+
+        private void Button_Click_Update(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Visibility = Visibility.Collapsed;
+            Runfile(@"C:\Program Files\QTranser", "QTranser_Installer.msi");
+        }
+        private void Runfile(string path, string fileName)
+        {
+            string targetPath = string.Format(path);
+            Process process = new Process();
+            process.StartInfo.WorkingDirectory = targetPath;
+            process.StartInfo.FileName = fileName;
+            process.StartInfo.UseShellExecute = true;
+            process.Start();
         }
     }
 }

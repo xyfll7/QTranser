@@ -1,0 +1,7 @@
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\QTranserOneKeyInstallers.exe.config
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\QTranserOneKeyInstallers.exe
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\QTranserOneKeyInstallers.pdb
+C:\Users\Administrator\source\repos\QTranser\QTranserOneKeyInstallers\obj\Debug\QTranserOneKeyInstallers.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\QTranser\QTranserOneKeyInstallers\obj\Debug\QTranserOneKeyInstallers.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\QTranser\QTranserOneKeyInstallers\obj\Debug\QTranserOneKeyInstallers.exe
+C:\Users\Administrator\source\repos\QTranser\QTranserOneKeyInstallers\obj\Debug\QTranserOneKeyInstallers.pdb

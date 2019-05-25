@@ -12,7 +12,7 @@ namespace QTranser.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,24 +25,73 @@ namespace QTranser.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection 设置 {
+        [global::System.Configuration.DefaultSettingValueAttribute("——— login ———")]
+        public string GitHubUserName {
             get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["设置"]));
+                return ((string)(this["GitHubUserName"]));
             }
             set {
-                this["设置"] = value;
+                this["GitHubUserName"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("aa6666")]
-        public string ssssssssssssss {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GitHubUserId {
             get {
-                return ((string)(this["ssssssssssssss"]));
+                return ((string)(this["GitHubUserId"]));
             }
             set {
-                this["ssssssssssssss"] = value;
+                this["GitHubUserId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string GitHubUserInfo {
+            get {
+                return ((string)(this["GitHubUserInfo"]));
+            }
+            set {
+                this["GitHubUserInfo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Yesterday {
+            get {
+                return ((int)(this["Yesterday"]));
+            }
+            set {
+                this["Yesterday"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int TodayTanseTime {
+            get {
+                return ((int)(this["TodayTanseTime"]));
+            }
+            set {
+                this["TodayTanseTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int WeekTanseTime {
+            get {
+                return ((int)(this["WeekTanseTime"]));
+            }
+            set {
+                this["WeekTanseTime"] = value;
             }
         }
     }

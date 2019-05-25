@@ -1,0 +1,29 @@
+{
+  "name": "koa-qtranser",
+  "version": "1.0.0",
+  "description": "QTranser-server",
+  "main": "app.js",
+  "scripts": {
+    "serve": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "QTranser"
+  ],
+  "author": "xyf",
+  "license": "ISC",
+  "dependencies": {
+    "alarm": "^2.0.0",
+    "alarmclock": "^1.0.1",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "md5": "^2.2.1",
+    "mongoose": "^5.5.7",
+    "node-fetch": "^2.6.0"
+  }
+}

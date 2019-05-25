@@ -47,30 +47,46 @@
     <Reference Include="DnsClient, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
       <HintPath>..\packages\DnsClient.1.2.0\lib\net45\DnsClient.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Bson.2.8.0\lib\net452\MongoDB.Bson.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.2.8.0\lib\net452\MongoDB.Driver.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver.Core, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.8.0\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    <Reference Include="MockHttpServer, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MockHttpServer.1.4.0.0\lib\net45\MockHttpServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.110.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.110.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.110.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -91,6 +107,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSDeskband\BandOperate.cs" />
+    <Compile Include="QTranseLib\GithubLogin\GithubLogin.cs" />
+    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteColumn.cs" />
+    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteColumnList.cs" />
+    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteHelper.cs" />
+    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteTable.cs" />
+    <Compile Include="QTranseLib\SysColorChanger\ThemeColor.cs" />
+    <Compile Include="QTranseLib\TodayTranseTimes\TanseTimes.cs" />
+    <Compile Include="QTranseLib\Update\Update.cs" />
+    <Compile Include="QTranseLib\_youdaoapi\GetMAC.cs" />
     <Compile Include="QTranseLib\HistoryWord.cs" />
     <Compile Include="log\Loger.cs" />
     <Compile Include="QShower.xaml.cs">
@@ -104,13 +129,16 @@
     <Compile Include="QTranseLib\ForegroundWindow.cs" />
     <Compile Include="QTranseLib\HotKeyEditor\HotKey.cs" />
     <Compile Include="QTranseLib\HotKeyEditor\HotKeyHelper.cs" />
-    <Compile Include="QTranseLib\MongoDB\Credentials.cs" />
-    <Compile Include="QTranseLib\SysColorChanger.cs" />
+    <Compile Include="QTranseLib\SysColorChanger\SysColorChanger.cs" />
     <Compile Include="QTranseLib\GlobalUnhandledException.cs" />
-    <Compile Include="QTranseLib\youdaoapi\Getidkey.cs" />
-    <Compile Include="QTranseLib\youdaoapi\Idkey.cs" />
-    <Compile Include="QTranseLib\youdaoapi\Youdao.cs" />
+    <Compile Include="QTranseLib\translator-api\translator.cs" />
+    <Compile Include="QTranseLib\translator-api\words.cs" />
+    <Compile Include="QTranseLib\_youdaoapi\Getidkey.cs" />
+    <Compile Include="QTranseLib\_youdaoapi\Idkey.cs" />
+    <Compile Include="QTranseLib\_youdaoapi\Youdao.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="QTranseLib\SQLite\config.cs" />
+    <Compile Include="QTranseLib\SQLite\SQLite.cs" />
     <Compile Include="ViewModles\MainViewModel.cs" />
     <Compile Include="ViewModles\ViewModel.cs" />
     <Page Include="QShower.xaml">
@@ -173,6 +201,7 @@
     <None Include="log\log.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Resource Include="image\QTranser.ico" />
     <Content Include="tools\gacutil.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -180,7 +209,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Resource Include="image\uninstall.ico" />
-    <Resource Include="image\translate.ico" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="IWshRuntimeLibrary">
@@ -193,6 +221,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\StrongNamer.0.0.8\build\StrongNamer.targets" Condition="Exists('..\packages\StrongNamer.0.0.8\build\StrongNamer.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -200,5 +229,7 @@
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\StrongNamer.0.0.8\build\StrongNamer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\StrongNamer.0.0.8\build\StrongNamer.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
 </Project>

@@ -2,11 +2,23 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="QTranser.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="设置" Type="System.Collections.Specialized.StringCollection" Scope="User">
+    <Setting Name="GitHubUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">——— login ———</Value>
+    </Setting>
+    <Setting Name="GitHubUserId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ssssssssssssss" Type="System.String" Scope="User">
-      <Value Profile="(Default)">aa6666</Value>
+    <Setting Name="GitHubUserInfo" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Yesterday" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="TodayTanseTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WeekTanseTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

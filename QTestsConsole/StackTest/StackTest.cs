@@ -8,7 +8,7 @@ namespace QTests.StackTest
 {
     class StackTest
     {
-        public static void Main()
+        public static void Mainserss()
         {
             var alphabet = new Stack<char>();
             alphabet.Push('A');

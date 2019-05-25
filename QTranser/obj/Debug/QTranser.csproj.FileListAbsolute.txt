@@ -103,16 +103,10 @@ C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Xml.XmlSe
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Xml.XPath.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\DnsClient.dll
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MongoDB.Bson.dll
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MongoDB.Driver.Core.dll
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MongoDB.Driver.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Buffers.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\WindowsInput.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\DnsClient.xml
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MongoDB.Bson.xml
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MongoDB.Driver.xml
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MongoDB.Driver.Core.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Buffers.xml
@@ -137,3 +131,6 @@ C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\QTranser.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\obj\Debug\QTranser.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\installer.bat
 C:\Users\Administrator\source\repos\QTranser\QTranser\obj\Debug\QTranser.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\RestSharp.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\RestSharp.xml
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MockHttpServer.dll

@@ -65,7 +65,7 @@
         </Style>
 
         <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
-            
+
             <StackPanel Orientation="Horizontal" Margin="0,0,-46,0">
                 <Border x:Name="Border"  CornerRadius="2" Background="Transparent" Cursor="Hand"
                     Height="18" Width="18">
@@ -83,8 +83,11 @@
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="topPrompt" Storyboard.TargetProperty="Opacity"
-                                                 To="1" Duration="0:0:0.5"/>
+                                <DoubleAnimation 
+                                    Storyboard.TargetName="topPrompt" 
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="1" 
+                                    Duration="0:0:0.5"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -93,8 +96,11 @@
                     <EventTrigger.Actions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="topPrompt" Storyboard.TargetProperty="Opacity"
-                                                 To="0" Duration="0:0:0.5"/>
+                                <DoubleAnimation 
+                                    Storyboard.TargetName="topPrompt" 
+                                    Storyboard.TargetProperty="Opacity"
+                                    To="0" 
+                                    Duration="0:0:0.5"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -106,7 +112,7 @@
                     <Setter TargetName="Pather" Property="Fill" Value="White"/>
                 </Trigger>
             </ControlTemplate.Triggers>
-            
+
         </ControlTemplate>
 
         <Style TargetType="{x:Type ListBoxItem}">
@@ -138,19 +144,18 @@
                 />
         </DataTemplate>
     </Window.Resources>
-<!--以上是Window资源-->
+    <!--以上是Window资源-->
     <StackPanel Background="#4C000000" AllowDrop="True" Drop="StackPanel_Drop">
         <Button 
             Click="SetTop_Click" 
-            Style="{Binding ButtonStyle}"
             Template="{StaticResource ButtonTemplate}"
             WindowChrome.IsHitTestVisibleInChrome="True" 
             Margin="189,0,57,0"
             Height="21"
             />
-        <TabControl Margin="7 0" Background="Transparent" BorderThickness="0" >
+        <TabControl Margin="7 0" Background="Transparent" BorderThickness="0" Height="450" >
             <TabItem Header="QTranser">
-                <StackPanel Margin="5 11">
+                <StackPanel Margin="5 11 5 13">
                     <Grid Height="270" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -199,7 +204,9 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="History" Margin="15,0,-18,0" >
-                <StackPanel>
+                
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Height="320">
                     <StackPanel.Resources>
 
                         <Style TargetType="{x:Type ListBoxItem}">
@@ -268,7 +275,7 @@
                         </DataTemplate>
                     </StackPanel.Resources>
                     <!--中间工作-->
-                    <ListBox 
+                    <ListBox DockPanel.Dock="Top"
                         x:Name="HistoryListBox" Background="Transparent" BorderThickness="0"
                         ItemsSource="{Binding HistoryWord}"
                         ItemTemplate="{StaticResource HistoryListBoxItmesTemplate}"
@@ -277,11 +284,46 @@
                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                         ScrollViewer.VerticalScrollBarVisibility="Disabled">
                     </ListBox>
+                    </StackPanel>
+                    <Label DockPanel.Dock="Bottom" 
+                           Content="本周翻译次数" 
+                           HorizontalContentAlignment="Center"
+                           Height="20" 
+                           FontSize="13"
+                           Foreground="Gray"
+                           Padding="0"
+                           VerticalAlignment="Bottom"/>
+                    <Label DockPanel.Dock="Bottom" 
+                           Content="{Binding WeekTanseTime, Mode=TwoWay}" 
+                           HorizontalContentAlignment="Center"
+                           Height="20" 
+                           FontSize="13"
+                           Foreground="Gray"
+                           Padding="0"
+                           VerticalAlignment="Bottom"/>
+                    <Label DockPanel.Dock="Bottom" 
+                           Content="今日翻译次数" 
+                           HorizontalContentAlignment="Center"
+                           Height="20" 
+                           FontSize="13"
+                           Foreground="Gray"
+                           Padding="0"
+                           VerticalAlignment="Bottom"/>
+                    <Label DockPanel.Dock="Bottom" 
+                           Content="{Binding TodayTanseTime, Mode=TwoWay}" 
+                           HorizontalContentAlignment="Center"
+                           Height="20" 
+                           FontSize="13"
+                           Foreground="Gray"
+                           Padding="0"
+                           VerticalAlignment="Bottom"/>
+
                     <!--结束工作-->
-                </StackPanel>
+                   
+                </DockPanel>
             </TabItem>
-            
-            
+
+
             <TabItem Header="&gt;&gt;" Margin="0,0,-59,0" HorizontalAlignment="Right">
                 <StackPanel >
                     <TextBlock Text="          鼠标点击高亮后&#x000A;直接在键盘上输入新的快捷键" 
@@ -296,7 +338,32 @@
                 </StackPanel>
             </TabItem>
         </TabControl>
+        <Label Foreground="Gray" 
+               HorizontalContentAlignment="Center"
+               FontSize="12"
+               Height="25"
+               Padding="2"
+               Content="{Binding UserName,Mode=TwoWay}"
+               >
+        </Label>
+        <Border x:Name="Border"
+                CornerRadius="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="#19D3D3D3"
+                Cursor="Hand"
+                Height="15"
+                Width="15"
+                MouseLeftButtonUp="Pather_MouseLeftButtonUp">
 
+            <Path Data="M512 12.64c-282.752 0-512 229.216-512 512 0 226.208 146.72 418.144 350.144 485.824 25.6 4.736 35.008-11.104 35.008-24.64 0-12.192-0.48-52.544-0.704-95.328-142.464 30.976-172.512-60.416-172.512-60.416-23.296-59.168-56.832-74.912-56.832-74.912-46.464-31.776 3.52-31.136 3.52-31.136 51.392 3.616 78.464 52.768 78.464 52.768 45.664 78.272 119.776 55.648 148.992 42.56 4.576-33.088 17.856-55.68 32.512-68.48-113.728-12.928-233.28-56.864-233.28-253.024 0-55.904 20-101.568 52.768-137.44-5.312-12.896-22.848-64.96 4.96-135.488 0 0 43.008-13.76 140.832 52.48 40.832-11.36 84.64-17.024 128.16-17.248 43.488 0.192 87.328 5.888 128.256 17.248 97.728-66.24 140.64-52.48 140.64-52.48 27.872 70.528 10.336 122.592 5.024 135.488 32.832 35.84 52.704 81.536 52.704 137.44 0 196.64-119.776 239.936-233.792 252.64 18.368 15.904 34.72 47.04 34.72 94.816 0 68.512-0.608 123.648-0.608 140.512 0 13.632 9.216 29.6 35.168 24.576 203.328-67.776 349.856-259.616 349.856-485.76 0-282.784-229.248-512-512-512z" 
+                  x:Name="Pather"
+                  Fill="Gray"
+                  Stretch="Fill"
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch"
+                  WindowChrome.IsHitTestVisibleInChrome="True" Margin="-1,-1,-1,-1" />
 
+        </Border>
     </StackPanel>
 </Window>
