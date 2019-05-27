@@ -3,6 +3,11 @@
 
 下载安装包： [QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 
 
+这款软件的特别之处在于：它监视剪切板，并将翻译结果展示在windows任务栏。
+
+特别是对学习编程朋友有较大的帮助，他们可以随手Ctrl+c 从代码编辑器，termnail中翻译不认识的单词，
+不像其它翻译工具，这款软件的翻译作用域等于剪切板的作用域。
+
 ## 厉害的Ctrl+C 
 您只需要按下Ctrl+C将文字复制进剪切板：
 
@@ -47,3 +52,9 @@ Ctrl+C时朗读英文发音
 
 如果您使用Mac请下载Mac版的
 [“快译”](https://itunes.apple.com/cn/app/%E5%BF%AB%E8%AF%91-%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%99%BA%E8%83%BD%E5%AD%97%E5%85%B8/id1217010477?mt=12)
+
+## 交流反馈
+
+加微信交流反馈群，这样能够得到更及时的反馈。
+
+<img src='https://raw.githubusercontent.com/xyfll7/QTranser/master/screenshot/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190510155059.jpg' height='400px'>
