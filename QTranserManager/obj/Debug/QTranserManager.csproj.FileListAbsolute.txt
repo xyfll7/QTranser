@@ -1,0 +1,14 @@
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\bin\Debug\QTranserManager.exe.config
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\bin\Debug\QTranserManager.exe
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\bin\Debug\QTranserManager.pdb
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\MainWindow.g.cs
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\App.g.cs
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager_MarkupCompile.cache
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager_MarkupCompile.lref
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\MainWindow.baml
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager.g.resources
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager.Properties.Resources.resources
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager.exe
+C:\Users\Administrator\source\repos\QTranser\QTranserManager\obj\Debug\QTranserManager.pdb

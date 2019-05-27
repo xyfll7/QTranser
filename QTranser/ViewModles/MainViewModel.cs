@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QTranser.QTranseLib;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
@@ -153,10 +154,10 @@ namespace QTranser.ViewModles
             }
         }
 
-        private Brush _logoColor = SystemParameters.WindowGlassBrush;
+        private Brush _logoColor = Theme.GetLogoColor();
         public Brush LogoColor
         {
-            get => _logoColor;
+            get => _logoColor ;
             set
             {
                 if (value == _logoColor) return;

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:QTranser"
         xmlns:hotKey="clr-namespace:HotKeyEditor"
         Width="270"
+        Height="525"
         Background="{Binding LogoColor}"
         ShowInTaskbar="False"
         ResizeMode="NoResize"  
@@ -21,6 +22,7 @@
         <Style x:Key="HotKeyStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="MinLines" Value="2"/>
+            <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Foreground" Value="Gray"/>
@@ -140,8 +142,7 @@
             <TextBlock 
                 Text="{Binding Path=Word}" 
                 MouseLeftButtonDown="HistoryList_MouseLeftButtonDown"  
-                MouseRightButtonUp="HistoryList_MouseRightButtonUp"
-                />
+                MouseRightButtonUp="HistoryList_MouseRightButtonUp"/>
         </DataTemplate>
     </Window.Resources>
     <!--以上是Window资源-->

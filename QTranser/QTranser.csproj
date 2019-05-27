@@ -108,11 +108,7 @@
   <ItemGroup>
     <Compile Include="CSDeskband\BandOperate.cs" />
     <Compile Include="QTranseLib\GithubLogin\GithubLogin.cs" />
-    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteColumn.cs" />
-    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteColumnList.cs" />
-    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteHelper.cs" />
-    <Compile Include="QTranseLib\SQLite\SQLiteHelper\SQLiteTable.cs" />
-    <Compile Include="QTranseLib\SysColorChanger\ThemeColor.cs" />
+    <Compile Include="QTranseLib\SysColorChanger\Theme.cs" />
     <Compile Include="QTranseLib\TodayTranseTimes\TanseTimes.cs" />
     <Compile Include="QTranseLib\Update\Update.cs" />
     <Compile Include="QTranseLib\_youdaoapi\GetMAC.cs" />
@@ -137,8 +133,6 @@
     <Compile Include="QTranseLib\_youdaoapi\Idkey.cs" />
     <Compile Include="QTranseLib\_youdaoapi\Youdao.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="QTranseLib\SQLite\config.cs" />
-    <Compile Include="QTranseLib\SQLite\SQLite.cs" />
     <Compile Include="ViewModles\MainViewModel.cs" />
     <Compile Include="ViewModles\ViewModel.cs" />
     <Page Include="QShower.xaml">

@@ -22,7 +22,6 @@ namespace QTranser
         {
             InitializeComponent();
             DataContext = QTranse.Mvvm;
-            this.Height = SystemParameters.WorkArea.Height / 2;
             GithubLogin.InitGitHubUserName();
             TanseTimes.InitTranseTime();
         }

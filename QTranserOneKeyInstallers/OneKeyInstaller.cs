@@ -2,6 +2,9 @@
 using System.Diagnostics;
 using System.IO;
 using System.Security.Principal;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace QTranserOneKeyInstallers
 {
@@ -20,33 +23,14 @@ namespace QTranserOneKeyInstallers
             {
                 // 注销QTranser "%~dp0RegAsm.exe" /nologo /unregister "%~dp0..\QTranser.dll"
                 RegisterDll("/nologo /unregister /silent \"{0}\"", "QTranser.dll");
-                // 注册QTranser "%~dp0RegAsm.exe" /nologo /codebase "%~dp0..\QTranser.dll"
-                RegisterDll("/nologo /codebase /silent \"{0}\"", "QTranser.dll");
-                // 关闭Explore
-                CloseExplorer("taskkill /f /im \"explorer.exe\"");
-                // 启动Explore
-                StrartExplorer();
-            }
 
+                // 重启Explore
+                RestartExplorer("taskkill /f /im \"explorer.exe\""); 
+
+            }
         }
 
-        private void StrartExplorer()
-        {
-            string explorer = string.Format("{0}\\{1}", Environment.GetEnvironmentVariable("WINDIR"), "explorer.exe");
-            using (var p = new Process())
-            {
-                p.StartInfo.FileName = explorer;
-                p.StartInfo.UseShellExecute = true;
-                p.StartInfo.CreateNoWindow = true;
-                p.Start();
-                p.WaitForExit();
-                p.Close();
-                p.Dispose();
-            }
-
-        }
-
-        private void CloseExplorer(string str)
+        private void RestartExplorer(string str)
         {
             string cmdline = $"{str}";
             using (var p = new Process())
@@ -56,15 +40,25 @@ namespace QTranserOneKeyInstallers
                 p.StartInfo.RedirectStandardInput = true;
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.RedirectStandardError = true;
-                p.StartInfo.WorkingDirectory = @"C:\Users\Administrator\Desktop";
                 p.StartInfo.CreateNoWindow = true;
 
                 p.Start();
                 p.StandardInput.AutoFlush = true;
                 p.StandardInput.WriteLine(cmdline + " &exit");
 
-                //获取cmd窗口的输出信息  
-                string output = p.StandardOutput.ReadToEnd();
+                p.WaitForExit();
+                p.Close();
+
+                /////////////////////////////////
+                string explorer = string.Format("{0}\\{1}", Environment.GetEnvironmentVariable("WINDIR"), "explorer.exe");
+                p.StartInfo.FileName = explorer;
+                p.Start();
+
+                Thread.Sleep(4000);
+                // 注册QTranser "%~dp0RegAsm.exe" /nologo /codebase "%~dp0..\QTranser.dll"
+                RegisterDll("/nologo /codebase /silent \"{0}\"", "QTranser.dll");
+                /////////////////////////////////////
+
                 p.WaitForExit();
                 p.Close();
                 p.Dispose();

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
+using System.Windows.Media;
 
 namespace QTranser.QTranseLib
 {
@@ -44,6 +45,8 @@ namespace QTranser.QTranseLib
             handled = false;
             return IntPtr.Zero;
         }
+
+
 
     }
 }

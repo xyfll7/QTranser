@@ -130,7 +130,16 @@ C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\QTranser.dll.con
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\QTranser.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\obj\Debug\QTranser.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\tools\installer.bat
-C:\Users\Administrator\source\repos\QTranser\QTranser\obj\Debug\QTranser.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\RestSharp.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\RestSharp.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\MockHttpServer.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.xml
+C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Administrator\source\repos\QTranser\QTranser\obj\Debug\QTranser.csprojAssemblyReference.cache

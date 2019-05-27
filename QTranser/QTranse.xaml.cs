@@ -55,23 +55,9 @@ namespace QTranser
             RegisterHotKey();
                 
             var SysColor = new SysColorChanger(this);
-            SysColor.SysColorChange += OnThemeColorChange;
+            SysColor.SysColorChange += () => Mvvm.LogoColor = Theme.GetLogoColor(); 
         }
-        // 主题色
-        private void OnThemeColorChange()
-        {
-            ThemeColor _;
-            string color = SystemParameters.WindowGlassBrush.ToString().Remove(0, 1);
-            if (Enum.TryParse<ThemeColor>(color, out _))
-            {
-                Mvvm.LogoColor = SystemParameters.WindowGlassBrush;
-            }
-            else
-            {
-                BrushConverter brushConverter = new BrushConverter();
-                Mvvm.LogoColor = (Brush)brushConverter.ConvertFromString("#FF436059");
-            }
-        }
+
         
         // 剪切板事件处理
         private async void OnClipboardUpdate(object sender, EventArgs e)
@@ -183,10 +169,7 @@ namespace QTranser
                 }
 
             }
-            catch(Exception err)
-            {
-                MessageBox.Show(err.ToString());
-            }
+            catch{ }
 
             return detailsStrO;
 
