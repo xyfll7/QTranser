@@ -272,40 +272,6 @@ namespace QTranser
         {
             var kc = new KeyConverter();
             var mkc = new ModifierKeysConverter();
-            //try
-            //{
-            //    var hotKeyQ = HotKeyManage.Register(Key.Q, ModifierKeys.Control);
-            //    Mvvm.HotKeyQ = HotKeyManage.ToString();
-            //    HotKeyEditor.HotKey.hotKeyModQ = ModifierKeys.Control;
-            //    HotKeyEditor.HotKey.hotKeyQ = Key.Q;
-            //}
-            //catch
-            //{
-            //    Mvvm.HotKeyQ = HotKeyManage.ToString() + "(冲突)";
-            //}
-            //try
-            //{
-            //    var hotKeyW = HotKeyManage.Register(Key.R, ModifierKeys.Control);
-            //    Mvvm.HotKeyW = HotKeyManage.ToString();
-            //    HotKeyEditor.HotKey.hotKeyModW = ModifierKeys.Control;
-            //    HotKeyEditor.HotKey.hotKeyW = Key.R;
-            //}
-            //catch
-            //{
-            //    Mvvm.HotKeyW = HotKeyManage.ToString() + "(冲突)";
-            //}
-            //try
-            //{
-            //    var hotKeyB = HotKeyManage.Register(Key.B, ModifierKeys.Control);
-            //    Mvvm.HotKeyB = HotKeyManage.ToString();
-            //    HotKeyEditor.HotKey.hotKeyModB = ModifierKeys.Control;
-            //    HotKeyEditor.HotKey.hotKeyB = Key.B;
-            //}
-            //catch
-            //{
-            //    Mvvm.HotKeyB = HotKeyManage.ToString() + "(冲突)";
-            //}
-
 
             try
             {
@@ -335,8 +301,6 @@ namespace QTranser
             //////////////////////////////////////////////////
 
 
-
-
             try
             {
                 if (Settings.Default.hotKeyModW != "" && Settings.Default.hotKeyW != "")
@@ -363,8 +327,6 @@ namespace QTranser
             }
 
             //////////////////////////////////////////////////
-
-
 
             try
             {
