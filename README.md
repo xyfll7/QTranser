@@ -1,9 +1,10 @@
 # 下载了之前版本，现无法正常翻译的请下载新版。
+## 下载一键安装包： [QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 
 
 # QTranser
 一款简单的翻译软件（非常方便使用）
 
-下载安装包： [QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 
+
 
 这款软件的特别之处在于：它监视剪切板，并将翻译结果展示在windows任务栏。
 
