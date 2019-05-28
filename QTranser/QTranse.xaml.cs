@@ -17,7 +17,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.Runtime.InteropServices;
-using System.Windows.Media;
+using QTranser.Properties;
 
 namespace QTranser
 {
@@ -165,6 +165,7 @@ namespace QTranser
                 }
                 else
                 {
+                    detailsStrO = baiduStr;
                     Mvvm.StrO = baiduStr;
                 }
 
@@ -269,74 +270,182 @@ namespace QTranser
         // 热键注册/响应
         private void RegisterHotKey()
         {
+            var kc = new KeyConverter();
+            var mkc = new ModifierKeysConverter();
+            //try
+            //{
+            //    var hotKeyQ = HotKeyManage.Register(Key.Q, ModifierKeys.Control);
+            //    Mvvm.HotKeyQ = HotKeyManage.ToString();
+            //    HotKeyEditor.HotKey.hotKeyModQ = ModifierKeys.Control;
+            //    HotKeyEditor.HotKey.hotKeyQ = Key.Q;
+            //}
+            //catch
+            //{
+            //    Mvvm.HotKeyQ = HotKeyManage.ToString() + "(冲突)";
+            //}
+            //try
+            //{
+            //    var hotKeyW = HotKeyManage.Register(Key.R, ModifierKeys.Control);
+            //    Mvvm.HotKeyW = HotKeyManage.ToString();
+            //    HotKeyEditor.HotKey.hotKeyModW = ModifierKeys.Control;
+            //    HotKeyEditor.HotKey.hotKeyW = Key.R;
+            //}
+            //catch
+            //{
+            //    Mvvm.HotKeyW = HotKeyManage.ToString() + "(冲突)";
+            //}
+            //try
+            //{
+            //    var hotKeyB = HotKeyManage.Register(Key.B, ModifierKeys.Control);
+            //    Mvvm.HotKeyB = HotKeyManage.ToString();
+            //    HotKeyEditor.HotKey.hotKeyModB = ModifierKeys.Control;
+            //    HotKeyEditor.HotKey.hotKeyB = Key.B;
+            //}
+            //catch
+            //{
+            //    Mvvm.HotKeyB = HotKeyManage.ToString() + "(冲突)";
+            //}
+
+
             try
             {
-                var hotKeyQ = HotKeyManage.Register(Key.Q, ModifierKeys.Control);
+                if (Settings.Default.hotKeyModQ != "" && Settings.Default.hotKeyQ != "")
+                {
+                    ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModQ);
+                    Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyQ);
+
+                    HotKeyManage.Register(key, mod);
+                }
+                else
+                {
+                    HotKeyManage.Register(Key.Q, ModifierKeys.Control);
+
+                    Settings.Default.hotKeyModQ = mkc.ConvertToString(ModifierKeys.Control);
+                    Settings.Default.hotKeyQ = kc.ConvertToString(Key.Q);
+                }
                 Mvvm.HotKeyQ = HotKeyManage.ToString();
-                HotKeyEditor.HotKey.hotKeyModQ = ModifierKeys.Control;
-                HotKeyEditor.HotKey.hotKeyQ = Key.Q;
             }
-            catch
+
+            catch (Exception err)
             {
+                MessageBox.Show(err.ToString());
                 Mvvm.HotKeyQ = HotKeyManage.ToString() + "(冲突)";
             }
+
+            //////////////////////////////////////////////////
+
+
+
+
             try
             {
-                var hotKeyW = HotKeyManage.Register(Key.R, ModifierKeys.Control);
+                if (Settings.Default.hotKeyModW != "" && Settings.Default.hotKeyW != "")
+                {
+                    ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModW);
+                    Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyW);
+
+                    HotKeyManage.Register(key, mod);
+                }
+                else
+                {
+                    HotKeyManage.Register(Key.W, ModifierKeys.Control);
+
+                    Settings.Default.hotKeyModW = mkc.ConvertToString(ModifierKeys.Control);
+                    Settings.Default.hotKeyW = kc.ConvertToString(Key.W);
+                }
                 Mvvm.HotKeyW = HotKeyManage.ToString();
-                HotKeyEditor.HotKey.hotKeyModW = ModifierKeys.Control;
-                HotKeyEditor.HotKey.hotKeyW = Key.R;
             }
-            catch
+
+            catch (Exception err)
             {
+                MessageBox.Show(err.ToString());
                 Mvvm.HotKeyW = HotKeyManage.ToString() + "(冲突)";
             }
+
+            //////////////////////////////////////////////////
+
+
+
             try
             {
-                var hotKeyB = HotKeyManage.Register(Key.B, ModifierKeys.Control);
+                if (Settings.Default.hotKeyModB != "" && Settings.Default.hotKeyB != "")
+                {
+                    ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModB);
+                    Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyB);
+
+                    HotKeyManage.Register(key, mod);
+                }
+                else
+                {
+                    HotKeyManage.Register(Key.B, ModifierKeys.Control);
+
+                    Settings.Default.hotKeyModB = mkc.ConvertToString(ModifierKeys.Control);
+                    Settings.Default.hotKeyB = kc.ConvertToString(Key.B);
+                }
                 Mvvm.HotKeyB = HotKeyManage.ToString();
-                HotKeyEditor.HotKey.hotKeyModB = ModifierKeys.Control;
-                HotKeyEditor.HotKey.hotKeyB = Key.B;
             }
-            catch
+
+            catch (Exception err)
             {
+                MessageBox.Show(err.ToString());
                 Mvvm.HotKeyB = HotKeyManage.ToString() + "(冲突)";
             }
+
+            //////////////////////////////////////////////////
+
             try
             {
-                var hotKeyG = HotKeyManage.Register(Key.G, ModifierKeys.Control);
+                if (Settings.Default.hotKeyModG != "" && Settings.Default.hotKeyG != "")
+                {
+                    ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModG);
+                    Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyG);
+
+                    HotKeyManage.Register(key, mod);
+                }
+                else
+                {
+                    HotKeyManage.Register(Key.G, ModifierKeys.Control);
+
+                    Settings.Default.hotKeyModG = mkc.ConvertToString(ModifierKeys.Control);
+                    Settings.Default.hotKeyG = kc.ConvertToString(Key.G);
+                }
                 Mvvm.HotKeyG = HotKeyManage.ToString();
-                HotKeyEditor.HotKey.hotKeyModG = ModifierKeys.Control;
-                HotKeyEditor.HotKey.hotKeyG = Key.G;
             }
-            catch
+            
+            catch (Exception err)
             {
+                MessageBox.Show(err.ToString());
                 Mvvm.HotKeyG = HotKeyManage.ToString() + "(冲突)";
             }
+
+
+            Settings.Default.Save();
         }
+
         private void OnHotKeyPressed(object sender, KeyPressedEventArgs e)
         {
-            if (e.HotKey.Key == HotKeyEditor.HotKey.hotKeyQ)
+            var kc = new KeyConverter();
+            if (e.HotKey.Key == (Key)kc.ConvertFromString(Settings.Default.hotKeyQ))
             {
                 ForegroundW.SetForeground("Shell_TrayWnd");
                 textBox.Focus();
                 textBox.Clear();
             }
-            if(e.HotKey.Key == HotKeyEditor.HotKey.hotKeyW)
+            if(e.HotKey.Key == (Key)kc.ConvertFromString(Settings.Default.hotKeyW))
             {
                 if (Shower == null)
                 { Shower = new QShower(); }
 
                 Shower.ShowOrHide(ActualHeight, ActualWidth, PointToScreen(new Point()).X);
             }
-            if (e.HotKey.Key == HotKeyEditor.HotKey.hotKeyB)
+            if (e.HotKey.Key == (Key)kc.ConvertFromString(Settings.Default.hotKeyB))
             { 
                 Sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
                 Thread.Sleep(20);
                 string str = ClipboardGetText(); 
                 Process.Start("https://www.baidu.com/s?ie=UTF-8&wd=" + str);
             }
-            if (e.HotKey.Key == HotKeyEditor.HotKey.hotKeyG)
+            if (e.HotKey.Key == (Key)kc.ConvertFromString(Settings.Default.hotKeyG))
             {
                 Sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_C);
                 Thread.Sleep(20);

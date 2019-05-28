@@ -23,7 +23,6 @@ namespace QTranserManager
         public MainWindow()
         {
             InitializeComponent();
-            OneKeyInstaller.Install();
         }
     }
 }

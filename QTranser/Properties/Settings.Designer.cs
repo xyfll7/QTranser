@@ -94,5 +94,101 @@ namespace QTranser.Properties {
                 this["WeekTanseTime"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyModQ {
+            get {
+                return ((string)(this["hotKeyModQ"]));
+            }
+            set {
+                this["hotKeyModQ"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyQ {
+            get {
+                return ((string)(this["hotKeyQ"]));
+            }
+            set {
+                this["hotKeyQ"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyModW {
+            get {
+                return ((string)(this["hotKeyModW"]));
+            }
+            set {
+                this["hotKeyModW"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyW {
+            get {
+                return ((string)(this["hotKeyW"]));
+            }
+            set {
+                this["hotKeyW"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyModB {
+            get {
+                return ((string)(this["hotKeyModB"]));
+            }
+            set {
+                this["hotKeyModB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyB {
+            get {
+                return ((string)(this["hotKeyB"]));
+            }
+            set {
+                this["hotKeyB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyModG {
+            get {
+                return ((string)(this["hotKeyModG"]));
+            }
+            set {
+                this["hotKeyModG"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string hotKeyG {
+            get {
+                return ((string)(this["hotKeyG"]));
+            }
+            set {
+                this["hotKeyG"] = value;
+            }
+        }
     }
 }

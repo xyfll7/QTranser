@@ -35,24 +35,24 @@
     <StackPanel 
         Orientation="Horizontal"
         HorizontalAlignment="Right">
-        <TextBox 
-        x:Name="textBox"
-        Text="{Binding StrQ}"
-        ContextMenu="{x:Null}"
-        SelectionBrush="{Binding LogoColor}"
-        SelectionOpacity="0.5" 
-        VerticalContentAlignment="Center"
-        Background="Transparent"
-        BorderThickness="0,2,0,0"
-        Padding="3,0,3,0"
-        BorderBrush="Transparent"
-        Foreground="White"
-        Height="20" 
-        FontSize="14"
-        MinWidth="17" 
-        CaretBrush="Gray" 
-        MaxLines="1"
-        KeyUp="TextBox_KeyUp"/>
+            <TextBox 
+            x:Name="textBox"
+            Text="{Binding StrQ}"
+            ContextMenu="{x:Null}"
+            SelectionBrush="{Binding LogoColor}"
+            SelectionOpacity="0.5" 
+            VerticalContentAlignment="Center"
+            Background="Transparent"
+            BorderThickness="0,2,0,0"
+            Padding="3,0,3,0"
+            BorderBrush="Transparent"
+            Foreground="White"
+            Height="20" 
+            FontSize="14"
+            MinWidth="17" 
+            CaretBrush="Gray" 
+            MaxLines="1"
+            KeyUp="TextBox_KeyUp"/>
         <Button 
                 Content=" 升级" 
                 Style="{StaticResource ButtonStyle}"
@@ -67,5 +67,7 @@
                 MouseLeftButtonDown="Logo_MouseLeftButtonDown"
                 MouseEnter="Logo_MouseEnter">
         </Rectangle>
+           
+
     </StackPanel>
 </UserControl>

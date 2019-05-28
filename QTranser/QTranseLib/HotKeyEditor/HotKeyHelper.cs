@@ -1,4 +1,5 @@
 ﻿using QTranser;
+using QTranser.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -48,50 +49,72 @@ namespace HotKeyEditor
             var textBox = sender as TextBox;
             if (!_ignoredKey.Contains(e.Key) && (e.Key != Key.System || (e.Key == Key.System && !_ignoredKey.Contains(e.SystemKey))))
             {
-                var key = (e.Key == Key.System && !_ignoredKey.Contains(e.SystemKey)) ? e.SystemKey : e.Key;
+                var keys = (e.Key == Key.System && !_ignoredKey.Contains(e.SystemKey)) ? e.SystemKey : e.Key;
                 var hotKey = new HotKey()
                 {
                     Ctrl = ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control),
                     Alt = ((Keyboard.Modifiers & ModifierKeys.Alt) == ModifierKeys.Alt),
                     Shift = ((Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift),
-                    Key = key
+                    Key = keys
                 };
                 if(hotKey.Ctrl || hotKey.Alt || hotKey.Shift == true)
                 {
-                    if(textBox.Name == "HotKeyQ")
+                    var kc = new KeyConverter();
+                    var mkc = new ModifierKeysConverter();
+                    if (textBox.Name == "HotKeyQ")
                     {
                         if (e.Key == Key.C ) return;
-                        QTranse.HotKeyManage.Unregister(HotKey.hotKeyQ, HotKey.hotKeyModQ);
+
+                        Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyQ);
+                        ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModQ);
+
+                        QTranse.HotKeyManage.Unregister(key, mod);
                         QTranse.HotKeyManage.Register(e.Key, Keyboard.Modifiers);
-                        HotKey.hotKeyQ = e.Key;
-                        HotKey.hotKeyModQ = Keyboard.Modifiers;
+                        Settings.Default.hotKeyQ = kc.ConvertToString(e.Key);
+                        Settings.Default.hotKeyModQ = mkc.ConvertToString(Keyboard.Modifiers);
+                        Settings.Default.Save();
                         QTranse.Mvvm.HotKeyQ = string.Format($"{hotKey}");
                     }
                     if (textBox.Name == "HotKeyW")
                     {
                         if (e.Key == Key.C) return;
-                        QTranse.HotKeyManage.Unregister(HotKey.hotKeyW, HotKey.hotKeyModW);
+
+                        Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyW);
+                        ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModW);
+
+                        QTranse.HotKeyManage.Unregister(key, mod);
                         QTranse.HotKeyManage.Register(e.Key, Keyboard.Modifiers);
-                        HotKey.hotKeyW = e.Key;
-                        HotKey.hotKeyModW = Keyboard.Modifiers;
+                        Settings.Default.hotKeyW = kc.ConvertToString(e.Key);
+                        Settings.Default.hotKeyModW = mkc.ConvertToString(Keyboard.Modifiers);
+                        Settings.Default.Save();
                         QTranse.Mvvm.HotKeyW = string.Format($"{hotKey}");
                     }
                     if (textBox.Name == "HotKeyB")
                     {
                         if (e.Key == Key.C ) return;
-                        QTranse.HotKeyManage.Unregister(HotKey.hotKeyB, HotKey.hotKeyModB);
+
+                        Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyB);
+                        ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModB);
+
+                        QTranse.HotKeyManage.Unregister(key, mod);
                         QTranse.HotKeyManage.Register(e.Key, Keyboard.Modifiers);
-                        HotKey.hotKeyB = e.Key;
-                        HotKey.hotKeyModB = Keyboard.Modifiers;
-                        QTranse.Mvvm.HotKeyB= string.Format($"{hotKey}");
+                        Settings.Default.hotKeyB = kc.ConvertToString(e.Key);
+                        Settings.Default.hotKeyModB = mkc.ConvertToString(Keyboard.Modifiers);
+                        Settings.Default.Save();
+                        QTranse.Mvvm.HotKeyB = string.Format($"{hotKey}");
                     }
                     if (textBox.Name == "HotKeyG")
                     {
                         if (e.Key == Key.C) return;
-                        QTranse.HotKeyManage.Unregister(HotKey.hotKeyG, HotKey.hotKeyModG);
+
+                        Key key = (Key)kc.ConvertFromString(Settings.Default.hotKeyG);
+                        ModifierKeys mod = (ModifierKeys)mkc.ConvertFromString(Settings.Default.hotKeyModG);
+
+                        QTranse.HotKeyManage.Unregister(key, mod);
                         QTranse.HotKeyManage.Register(e.Key, Keyboard.Modifiers);
-                        HotKey.hotKeyG = e.Key;
-                        HotKey.hotKeyModG = Keyboard.Modifiers;
+                        Settings.Default.hotKeyG = kc.ConvertToString(e.Key);
+                        Settings.Default.hotKeyModG = mkc.ConvertToString(Keyboard.Modifiers);
+                        Settings.Default.Save();
                         QTranse.Mvvm.HotKeyG = string.Format($"{hotKey}");
                     }
 

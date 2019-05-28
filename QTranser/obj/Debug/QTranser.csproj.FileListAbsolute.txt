@@ -107,7 +107,6 @@ C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\Newtonsoft.Json.
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Buffers.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\WindowsInput.dll
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\DnsClient.xml
-C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Buffers.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\WindowsInput.xml
