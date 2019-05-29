@@ -190,5 +190,14 @@ namespace QTranser.Properties {
                 this["hotKeyG"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://47.95.197.94:2399/")]
+        public string fyHost {
+            get {
+                return ((string)(this["fyHost"]));
+            }
+        }
     }
 }

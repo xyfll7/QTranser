@@ -66,10 +66,7 @@ namespace QTranser.QTranseLib
 
         private string GetUserInfo()
         {
-            //https://api.github.com/user?access_token=${access_token}
-            //var client = new RestClient($"https://api.github.com/");
-            //var result = client.Execute(new RestRequest($"user?access_token={Token}", Method.GET));
-            var client = new RestClient($"http://47.95.197.94:2399/");
+            var client = new RestClient(Properties.Settings.Default.fyHost);
             var result = client.Execute(new RestRequest($"logins/user?access_token={Token}", Method.GET));
             Properties.Settings.Default.GitHubUserInfo = result.Content;
 

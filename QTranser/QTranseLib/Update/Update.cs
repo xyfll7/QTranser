@@ -69,8 +69,8 @@ namespace QTranser.QTranseLib
 
         private string UpdateInfo()
         {
-            var client = new RestClient("http://47.95.197.94:2399");
-            var request = new RestRequest("/api/transer/update", Method.GET);
+            var client = new RestClient(Properties.Settings.Default.fyHost);
+            var request = new RestRequest("api/transer/update", Method.GET);
             IRestResponse response = client.Execute(request);
             return response.Content;
         }

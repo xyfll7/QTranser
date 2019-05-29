@@ -108,6 +108,10 @@
   <ItemGroup>
     <Compile Include="CSDeskband\BandOperate.cs" />
     <Compile Include="QTranseLib\GithubLogin\GithubLogin.cs" />
+    <Compile Include="QTranseLib\SQLite\HistoryWord.cs" />
+    <Compile Include="QTranseLib\SQLite\IDataProvider.cs" />
+    <Compile Include="QTranseLib\SQLite\IHistoryWord.cs" />
+    <Compile Include="QTranseLib\SQLite\SqliteDataProvider.cs" />
     <Compile Include="QTranseLib\SysColorChanger\Theme.cs" />
     <Compile Include="QTranseLib\TodayTranseTimes\TanseTimes.cs" />
     <Compile Include="QTranseLib\Update\Update.cs" />

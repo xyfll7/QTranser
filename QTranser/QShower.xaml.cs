@@ -151,5 +151,10 @@ namespace QTranser
         {
             githubLogin.Button_Click();
         }
+
+        private void Hyperlink_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Process.Start("ms-settings:personalization-colors");
+        }
     }
 }

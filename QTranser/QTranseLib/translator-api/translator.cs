@@ -10,8 +10,8 @@ namespace QTranser.QTranseLib
         public string GetJson(string str)
         {
             var mac = new GetMac();
-            var client = new RestClient("http://47.95.197.94:2399");
-            var request = new RestRequest("/api/transer", Method.POST);
+            var client = new RestClient(Properties.Settings.Default.fyHost);
+            var request = new RestRequest("api/transer", Method.POST);
             var postdata = new words()
             {
                 mac = mac.GetMacAddress(),

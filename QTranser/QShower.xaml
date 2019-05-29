@@ -276,15 +276,24 @@
                         </DataTemplate>
                     </StackPanel.Resources>
                     <!--中间工作-->
-                    <ListBox DockPanel.Dock="Top"
-                        x:Name="HistoryListBox" Background="Transparent" BorderThickness="0"
-                        ItemsSource="{Binding HistoryWord}"
-                        ItemTemplate="{StaticResource HistoryListBoxItmesTemplate}"
-                        Margin="10"
-                        MaxHeight="510" 
-                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                        ScrollViewer.VerticalScrollBarVisibility="Disabled">
-                    </ListBox>
+                        <TextBlock Text="点我设置主题颜色~喵！！@#￥%……" x:Name="LocationDisabledMessage" FontStyle="Italic"
+                                   Visibility="Visible" Margin="0,15,0,0" TextWrapping="Wrap" 
+                                   Cursor="Hand"
+                                   MouseLeftButtonUp="Hyperlink_MouseLeftButtonUp">
+                        </TextBlock >
+
+                        <ListBox DockPanel.Dock="Top"
+                            x:Name="HistoryListBox" Background="Transparent" BorderThickness="0"
+                            ItemsSource="{Binding HistoryWord}"
+                            ItemTemplate="{StaticResource HistoryListBoxItmesTemplate}"
+                            Margin="10"
+                            MaxHeight="510" 
+                            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                            ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                        </ListBox>
+
+
+
                     </StackPanel>
                     <Label DockPanel.Dock="Bottom" 
                            Content="本周翻译次数" 
@@ -302,6 +311,7 @@
                            Foreground="Gray"
                            Padding="0"
                            VerticalAlignment="Bottom"/>
+
                     <Label DockPanel.Dock="Bottom" 
                            Content="今日翻译次数" 
                            HorizontalContentAlignment="Center"
@@ -347,6 +357,8 @@
                Content="{Binding UserName,Mode=TwoWay}"
                >
         </Label>
+
+
         <Border x:Name="Border"
                 CornerRadius="10"
                 HorizontalAlignment="Stretch"
@@ -366,5 +378,6 @@
                   WindowChrome.IsHitTestVisibleInChrome="True" Margin="-1,-1,-1,-1" />
 
         </Border>
+        <Rectangle Fill="Transparent" Height="100"/>
     </StackPanel>
 </Window>
