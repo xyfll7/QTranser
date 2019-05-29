@@ -193,7 +193,7 @@ namespace QTranser.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://47.95.197.94:2399/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://fy.qtranser.cn:2399/")]
         public string fyHost {
             get {
                 return ((string)(this["fyHost"]));

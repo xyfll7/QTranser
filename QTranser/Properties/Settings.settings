@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="fyHost" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http://47.95.197.94:2399/</Value>
+      <Value Profile="(Default)">http://fy.qtranser.cn:2399/</Value>
     </Setting>
   </Settings>
 </SettingsFile>
