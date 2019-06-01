@@ -170,7 +170,7 @@ namespace QTranser
                 }
 
             }
-            catch{ }
+            catch {  }
 
             return detailsStrO;
 

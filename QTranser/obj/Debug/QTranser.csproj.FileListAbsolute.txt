@@ -141,4 +141,3 @@ C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\EntityFramework.
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.xml
 C:\Users\Administrator\source\repos\QTranser\QTranser\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Administrator\source\repos\QTranser\QTranser\obj\Debug\QTranser.csprojAssemblyReference.cache
