@@ -1,6 +1,6 @@
 # 由于版本更新，现无法正常翻译的请下载新版。
 ## 下载一键安装包： [QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 下载速度比较慢
-## 腾讯微云下载： [QTranser(Win10 X64)](https://share.weiyun.com/5nxSIRg) 稍微快一点
+## 腾讯微云下载： [QTranser(Win10 X64)](https://share.weiyun.com/5nxSIRg) 稍微快一点~
 
 
 # QTranser 简介
