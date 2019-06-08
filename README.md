@@ -1,8 +1,8 @@
 # 由于版本更新，现无法正常翻译的请下载新版。
 ## 下载一键安装包： 
-[QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 下载速度比较慢
+[QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 下载速度比较慢 （如果觉得好给个star呗~）
 
-[QTranser(Win7 X64)](https://github.com/xyfll7/QTranser/blob/master/QTranser_Installer/Debug/QTranser_InstallerWin7x64.msi?raw=true) 简单兼容win7，没有透明效果
+[QTranser(Win7 X64)](https://github.com/xyfll7/QTranser/blob/master/QTranser_Installer/Debug/QTranser_InstallerWin7x64.msi?raw=true) 简单兼容win7，没有透明效果（如果觉得好给个star呗~）
 
 
 
