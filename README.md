@@ -1,4 +1,3 @@
-# 由于版本更新，现无法正常翻译的请下载新版。
 ## 下载一键安装包： 
 [QTranser(Win10 X64)](https://raw.githubusercontent.com/xyfll7/QTranser/master/QTranser_Installer/Debug/QTranser_Installer.msi) 下载速度比较慢 （如果觉得好给个star呗~）
 
